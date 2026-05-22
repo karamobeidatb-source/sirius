@@ -221,7 +221,17 @@
     img.src=SOURCES[0];
   }
 
-  document.getElementById('go').addEventListener('click',tryUnlock);
+  document.getElementById('go').addEventListener('click',function(){
+    const btn=this;
+    let count=5;
+    btn.disabled=true;
+    btn.textContent=count+' 🌙';
+    const t=setInterval(function(){
+      count--;
+      if(count>0){ btn.textContent=count+' 🌙'; }
+      else{ clearInterval(t); btn.disabled=false; tryUnlock(); }
+    },1000);
+  });
   passEl.addEventListener('keydown',function(e){ if(e.key==='Enter') tryUnlock(); });
   passEl.focus();
 </script>
