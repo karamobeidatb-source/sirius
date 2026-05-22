@@ -91,12 +91,12 @@
   @keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-9px);}40%,80%{transform:translateX(9px);}}
 
   /* ---------- reveal ---------- */
-  .reveal{position:fixed;inset:0;z-index:5;display:none;align-items:center;justify-content:center;flex-direction:column;padding:24px;}
+  .reveal{position:fixed;inset:0;z-index:5;display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px;gap:0;overflow-y:auto;}
   .reveal.show{display:flex;animation:fadein 1.6s ease both;}
   @keyframes fadein{from{opacity:0;}to{opacity:1;}}
 
   .frame{
-    max-width:min(92vw,440px);max-height:78vh;border-radius:18px;overflow:hidden;
+    max-width:min(88vw,440px);max-height:52vh;border-radius:18px;overflow:hidden;
     box-shadow:0 0 0 1px rgba(232,200,145,.3),0 30px 80px rgba(0,0,0,.7),0 0 80px rgba(232,200,145,.15);
     animation:zoom 1.8s cubic-bezier(.16,1,.3,1) both;
   }
@@ -143,8 +143,8 @@
 <div class="reveal" id="reveal">
   <div class="frame" id="frame">
     <img id="photo" alt="">
-    <p class="loading" id="loading">wait for it ✨</p>
   </div>
+  <p class="loading" id="loading">wait for it ✨</p>
   <p class="quote">النُّجُومُ زِينَةُ السَّمَاءِ وَأَنْتِ زِينَةُ الْأَرْضِ، فَأَنْتِ النُّجُومُ وَهُمْ أَنْتِ</p>
   <p class="caption">أَنْتِ ذَاكِرَتِي 🤍</p>
   <p class="caption">sirius ✦</p>
