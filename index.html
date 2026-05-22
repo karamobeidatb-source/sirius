@@ -133,7 +133,7 @@
     <div class="field">
       <input id="pass" type="password" placeholder="• • • • • •" autocomplete="off" spellcheck="false">
     </div>
-    <button class="btn" id="go">افتحي</button>
+    <button class="btn" id="go">count from 5 to 1 then open😅</button>
     <p class="err" id="err">ليس النجم الصحيح... حاولي مرة أخرى ✦</p>
   </div>
 </div>
@@ -221,17 +221,7 @@
     img.src=SOURCES[0];
   }
 
-  document.getElementById('go').addEventListener('click',function(){
-    const btn=this;
-    let count=5;
-    btn.disabled=true;
-    btn.textContent=count+' 🌙';
-    const t=setInterval(function(){
-      count--;
-      if(count>0){ btn.textContent=count+' 🌙'; }
-      else{ clearInterval(t); btn.disabled=false; tryUnlock(); }
-    },1000);
-  });
+  document.getElementById('go').addEventListener('click',tryUnlock);
   passEl.addEventListener('keydown',function(e){ if(e.key==='Enter') tryUnlock(); });
   passEl.focus();
 </script>
