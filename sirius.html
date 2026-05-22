@@ -115,6 +115,7 @@
     color:var(--gold-soft);font-size:1.25rem;margin-top:14px;text-align:center;
     animation:fadein 2s ease 1s both;letter-spacing:.02em;
   }
+  .loading{color:var(--muted);font-size:.85rem;font-family:'Cormorant Garamond',serif;font-style:italic;letter-spacing:.08em;text-align:center;margin-top:12px;animation:pulse 1.5s ease-in-out infinite;}
   .imgerr{display:none;color:var(--muted);font-weight:300;text-align:center;max-width:340px;line-height:1.8;}
   .imgerr a{color:var(--gold);}
 </style>
@@ -142,6 +143,7 @@
 <div class="reveal" id="reveal">
   <div class="frame" id="frame">
     <img id="photo" alt="">
+    <p class="loading" id="loading">wait for it ✨</p>
   </div>
   <p class="quote">النُّجُومُ زِينَةُ السَّمَاءِ وَأَنْتِ زِينَةُ الْأَرْضِ، فَأَنْتِ النُّجُومُ وَهُمْ أَنْتِ</p>
   <p class="caption">أَنْتِ ذَاكِرَتِي 🤍</p>
@@ -213,6 +215,8 @@
     const img=document.getElementById('photo');
     const frame=document.getElementById('frame');
     const imgerr=document.getElementById('imgerr');
+    const loading=document.getElementById('loading');
+    img.onload=function(){ if(loading) loading.style.display='none'; };
     let i=0;
     img.onerror=function(){
       i++;
